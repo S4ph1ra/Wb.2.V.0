@@ -1,1 +1,25 @@
-elel
+name: Build APK
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.9'
+    - run: pip install websocket-client
+    - name: Build APK
+      run: |
+        python -m pyinstaller --onefile --windowed main.py
+        mv dist/main.exe app.apk
+    - name: Upload APK
+      uses: actions/upload-artifact@v2
+      with:
+        name: wcs_bot.apk
+        path: app.apk
