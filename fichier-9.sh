@@ -1,0 +1,1 @@
+python main.py --session "VOTRE_SESSION_KEY" --mode offline

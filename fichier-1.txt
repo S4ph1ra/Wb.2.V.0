@@ -1,0 +1,10 @@
+Wb/
+├── app/
+│   ├── main.py          # Script principal (Python)
+│   ├── config.py        # Paramètres
+│   ├── websocket_client.py  # Connexion WCSO
+│   ├── bot_logic.py     # Stratégies de farming
+│   └── utils.py         # Fonctions utiles (ex: logger)
+├── .github/workflows/
+│   └── build.yml        # CI/CD (APK direct)
+└── README.md
